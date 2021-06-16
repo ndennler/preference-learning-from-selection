@@ -11,7 +11,6 @@ def mclr():
                                                 number_samples=10_000)
 
 
-
 @pytest.mark.parametrize("dimensions", [2,5,10])
 @pytest.mark.parametrize("samples", [10, 100, 10_000])
 def test_init(dimensions, samples):
