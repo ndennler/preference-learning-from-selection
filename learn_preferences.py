@@ -1,3 +1,0 @@
-from src.reward_parameterizations import MonteCarloLinearReward
-
-preference_model = MonteCarloLinearReward(number_dimensions=2)
