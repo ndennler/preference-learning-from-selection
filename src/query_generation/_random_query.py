@@ -10,7 +10,7 @@ class RandomQueryGenerator():
         self.dimension = len(bounds) # number of dimensions per query
         self.space_of_queries = discrete_set #the set of things that can be chosen
 
-    def get_query(self, number_queries):
+    def get_query(self, number_queries, reward_parameterization=None, input_model=None):
         '''
         
         '''
