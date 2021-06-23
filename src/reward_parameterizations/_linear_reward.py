@@ -16,8 +16,8 @@ class MonteCarloLinearReward:
                                     high= 1,
                                     size=(number_samples, number_dimensions))
 
-        self.hypothesis_samples = self.hypothesis_samples[np.linalg.norm(self.hypothesis_samples,
-                                                                ord=2, axis=1) <= 1]
+        # self.hypothesis_samples = self.hypothesis_samples[np.linalg.norm(self.hypothesis_samples,
+                                                                # ord=2, axis=1) <= 1]
         # [N_samples]                                                 
         self.hypothesis_log_probabilities = np.zeros(len(self.hypothesis_samples))
         self.N = len(self.hypothesis_samples)#number_samples

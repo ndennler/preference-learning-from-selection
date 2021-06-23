@@ -41,9 +41,9 @@ def test_expected_value(mclr):
     assert mclr.get_expectation().shape[0] == 2 #number of dimensions
     assert np.sum(mclr.get_expectation()**2) < .001 # expectation should be zero
 
-    def p_x(omega):
+    def p_x(omegas):
         '''probability function that shifts expected omega[0] right'''
-        return (omega[0] + 1) / 2
+        return (omegas[:,0] + 1) / 2
     mclr.update(p_x)
 
     assert mclr.get_expectation().shape[0] == 2 #number of dimensions

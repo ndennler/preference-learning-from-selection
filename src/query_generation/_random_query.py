@@ -33,7 +33,7 @@ class RandomQueryGenerator():
         '''
 
         '''
-        assert number_queries < len(self.space_of_queries)
+        assert number_queries <= len(self.space_of_queries)
 
         indices = np.random.choice(np.arange(len(self.space_of_queries)),
                                 size=number_queries,
