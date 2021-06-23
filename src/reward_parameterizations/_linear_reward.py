@@ -23,6 +23,9 @@ class MonteCarloLinearReward:
         self.N = len(self.hypothesis_samples)#number_samples
         self.D = number_dimensions
     
+    def _gen_uniform_random_ball(self, samples, dimensions):
+        pass
+
     def update(self, prob_input_given_omegas):
         p_input = prob_input_given_omegas(self.hypothesis_samples)
         self.hypothesis_log_probabilities += np.log(p_input)
