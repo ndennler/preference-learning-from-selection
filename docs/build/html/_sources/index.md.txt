@@ -13,6 +13,9 @@
 :caption: API
 :hidden:
 
+api/src.input_models
+api/src.query_generation
+api/src.reward_parameterizations
 
 ```
 
