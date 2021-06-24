@@ -2,7 +2,7 @@ import numpy as np
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 
-from src.input_models import LuceShepardChoice
+from src.input_models import LuceShepardChoice, WeakPreferenceChoice
 from src.query_generation import InfoGainQueryGenerator, RandomQueryGenerator, VolumeRemovalQueryGenerator
 from src.reward_parameterizations import MonteCarloLinearReward
 
@@ -10,14 +10,14 @@ def alignment_metric(true_w, guessed_w):
     return np.dot(guessed_w, true_w) / (np.linalg.norm(guessed_w) * np.linalg.norm(true_w))
 
 #Experimental Constants
-dim_embedding = 6
+dim_embedding = 4
 true_preference = np.random.uniform(low=-1, high=1, size=dim_embedding)
 number_of_trials = 20
 max_number_of_queries = 30
 
 #User Input and Estimation of reward functions
-user_choice_model = LuceShepardChoice()
-user_estimate = MonteCarloLinearReward(dim_embedding, number_samples=50_000)
+user_choice_model = WeakPreferenceChoice(.1) # LuceShepardChoice()
+user_estimate = MonteCarloLinearReward(dim_embedding, number_samples=10_000)
 
 #Generators
 random_generator = RandomQueryGenerator( [(-1,1)] * dim_embedding)
@@ -33,6 +33,7 @@ for generator, name in zip(generators, names):
     for _ in tqdm(range(number_of_trials)):
 
         user_estimate.reset()
+        true_preference = np.random.uniform(low=-1, high=1, size=dim_embedding)
         alignment = [0]
 
         for _ in range(max_number_of_queries):

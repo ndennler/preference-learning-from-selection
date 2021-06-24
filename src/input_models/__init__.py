@@ -6,7 +6,9 @@
     src.input_models.LuceShepardChoice
 """
 from src.input_models._luce_shepard_choice import LuceShepardChoice
+from src.input_models._weak_preference_choice import WeakPreferenceChoice
 
 __all__ = [
     "LuceShepardChoice",
+    "WeakPreferenceChoice",
 ]
