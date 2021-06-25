@@ -2,7 +2,7 @@ import numpy as np
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 
-from src.input_models import LuceShepardChoice
+from src.input_models import LuceShepardChoice, WeakPreferenceChoice
 from src.query_generation import InfoGainQueryGenerator, RandomQueryGenerator, VolumeRemovalQueryGenerator
 from src.reward_parameterizations import MonteCarloLinearReward
 
@@ -33,6 +33,7 @@ for generator, name in zip(generators, names):
     for _ in tqdm(range(number_of_trials)):
 
         user_estimate.reset()
+        true_preference = np.random.uniform(low=-1, high=1, size=dim_embedding)
         alignment = [0]
 
         for _ in range(max_number_of_queries):
