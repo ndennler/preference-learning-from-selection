@@ -3,6 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-refs/*
+refs*
 .coverage
 junit*
+htmlcov*
+irl_preference.egg-info*
+.pytest_cache*
+coverage.xml
+.ipynb_checkpoints*

@@ -10,14 +10,14 @@ def alignment_metric(true_w, guessed_w):
     return np.dot(guessed_w, true_w) / (np.linalg.norm(guessed_w) * np.linalg.norm(true_w))
 
 #Experimental Constants
-dim_embedding = 6
+dim_embedding = 3
 true_preference = np.random.uniform(low=-1, high=1, size=dim_embedding)
 number_of_trials = 20
 max_number_of_queries = 30
 
 #User Input and Estimation of reward functions
 user_choice_model = LuceShepardChoice()
-user_estimate = MonteCarloLinearReward(dim_embedding, number_samples=50_000)
+user_estimate = MonteCarloLinearReward(dim_embedding, number_samples=10_000)
 
 #Generators
 random_generator = RandomQueryGenerator( [(-1,1)] * dim_embedding)

@@ -12,19 +12,21 @@ class MonteCarloLinearReward:
                  number_samples=50_000):
         
         # [N_samples x D_dims]
-        self.hypothesis_samples = np.random.uniform(low=-1, 
-                                    high= 1,
-                                    size=(number_samples, number_dimensions))
-
-        # self.hypothesis_samples = self.hypothesis_samples[np.linalg.norm(self.hypothesis_samples,
-                                                                # ord=2, axis=1) <= 1]
+        self.hypothesis_samples = self._gen_uniform_random_ball(number_samples, 
+                                                            number_dimensions)
         # [N_samples]                                                 
         self.hypothesis_log_probabilities = np.zeros(len(self.hypothesis_samples))
         self.N = len(self.hypothesis_samples)#number_samples
         self.D = number_dimensions
     
     def _gen_uniform_random_ball(self, samples, dimensions):
-        pass
+        # First generate random directions by normalizing the length of a vector of random-normal values (these distribute evenly on ball). generate random points / the norm
+        random_directions = np.random.normal(size=(dimensions, samples))
+        random_directions /= np.linalg.norm(random_directions, axis=0) #when you normalize them you make them the same length
+        # Second generate a random radius with probability proportional to the surface area of a ball with a given radius.
+        random_radii = np.random.random(samples) ** (1/dimensions) # random num points ^ 1/dimension
+        # Return the list of random (direction & length) points. Transpose the outcome
+        return (random_directions * random_radii).T
 
     def update(self, prob_input_given_omegas):
         p_input = prob_input_given_omegas(self.hypothesis_samples)
