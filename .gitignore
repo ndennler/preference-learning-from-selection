@@ -11,4 +11,5 @@ irl_preference.egg-info*
 .pytest_cache*
 coverage.xml
 .ipynb_checkpoints*
-examples/data/*
+
+examples/learn_MNIST_preference/data/*
