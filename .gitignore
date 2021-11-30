@@ -13,3 +13,5 @@ coverage.xml
 .ipynb_checkpoints*
 
 examples/learn_MNIST_preference/data/*
+examples/learn_voice_preference/data/*
+examples/learn_voice_preference/interpretable_features/data/*
