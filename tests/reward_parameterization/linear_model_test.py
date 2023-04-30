@@ -2,7 +2,7 @@
 import numpy as np
 import pytest
 
-from src.reward_parameterizations import MonteCarloLinearReward
+from irlpreference.reward_parameterizations import MonteCarloLinearReward
 
 @pytest.fixture
 def mclr():

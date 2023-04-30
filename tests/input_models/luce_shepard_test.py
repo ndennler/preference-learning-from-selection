@@ -2,7 +2,7 @@
 import numpy as np
 import pytest
 
-from src.input_models._luce_shepard_choice import LuceShepardChoice
+from irlpreference.input_models._luce_shepard_choice import LuceShepardChoice
 
 @pytest.fixture
 def luce_shepard_choice():

@@ -2,7 +2,7 @@
 import numpy as np
 import pytest
 
-from src.query_generation._random_query import RandomQueryGenerator
+from irlpreference.query_generation._random_query import RandomQueryGenerator
 
 @pytest.fixture
 def random_continuous_generator():
