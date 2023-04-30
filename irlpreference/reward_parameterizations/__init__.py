@@ -6,7 +6,7 @@ They implement a mapping from omega to a reward
 
     src.reward_parameterizations.MonteCarloLinearReward
 """
-from src.reward_parameterizations._linear_reward import MonteCarloLinearReward
+from irlpreference.reward_parameterizations._linear_reward import MonteCarloLinearReward
 
 
 __all__ = [

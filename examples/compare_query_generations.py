@@ -2,9 +2,9 @@ import numpy as np
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 
-from src.input_models import LuceShepardChoice, WeakPreferenceChoice
-from src.query_generation import InfoGainQueryGenerator, RandomQueryGenerator, VolumeRemovalQueryGenerator
-from src.reward_parameterizations import MonteCarloLinearReward
+from irlpreference.input_models import LuceShepardChoice, WeakPreferenceChoice
+from irlpreference.query_generation import InfoGainQueryGenerator, RandomQueryGenerator, VolumeRemovalQueryGenerator
+from irlpreference.reward_parameterizations import MonteCarloLinearReward
 
 def alignment_metric(true_w, guessed_w):
     return np.dot(guessed_w, true_w) / (np.linalg.norm(guessed_w) * np.linalg.norm(true_w))

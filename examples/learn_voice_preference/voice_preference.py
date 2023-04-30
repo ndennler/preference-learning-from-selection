@@ -4,8 +4,8 @@ import numpy as np
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 
-from src.input_models import LuceShepardChoice, WeakPreferenceChoice
-from src.reward_parameterizations import MonteCarloLinearReward
+from irlpreference.input_models import LuceShepardChoice, WeakPreferenceChoice
+from irlpreference.reward_parameterizations import MonteCarloLinearReward
 
 
 #initialize the voice sampler

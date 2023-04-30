@@ -2,9 +2,9 @@ import numpy as np
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 
-from src.input_models import LuceShepardChoice, WeakPreferenceChoice
-from src.query_generation import RandomQueryGenerator
-from src.reward_parameterizations import MonteCarloLinearReward
+from irlpreference.input_models import LuceShepardChoice, WeakPreferenceChoice
+from irlpreference.query_generation import RandomQueryGenerator
+from irlpreference.reward_parameterizations import MonteCarloLinearReward
 
 def get_user_input(query_images, best_image, number_of_options, goal):
     valid = False

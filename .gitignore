@@ -7,7 +7,7 @@ refs*
 .coverage
 junit*
 htmlcov*
-irl_preference.egg-info*
+*egg-info*
 .pytest_cache*
 coverage.xml
 .ipynb_checkpoints*
